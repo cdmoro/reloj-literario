@@ -1,6 +1,7 @@
-import { NOT_FOUND_QUOTES } from './utils.js';
+import { FALLBACK_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
+const addQuoteLink = document.getElementById("add-quote");
 let statistics;
 let lastTime;
 
@@ -9,9 +10,9 @@ async function getStatistics() {
     statistics = await response.json();
 }
 
-function getRandomItem(quotes, time) {
+function getQuote(quotes, time) {
     if (!quotes.length) {
-        quotes = NOT_FOUND_QUOTES;
+        quotes = FALLBACK_QUOTES;
     }
 
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
@@ -22,11 +23,9 @@ function getRandomItem(quotes, time) {
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
-
-        quote.link = /*html*/`(si sabés de alguna frase hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
+        quote.missingQuoteMessage = /*html*/`(si sabés de alguna frase hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
     }
 
-    const addQuoteLink = document.getElementById("agregar-frase");
     addQuoteLink.href = url.href;
 
     return quote;
@@ -45,7 +44,7 @@ async function updateTime() {
     if (lastTime !== time) {
         const response = await fetch(`../times/${fileName}.json`);
         quotes = await response.json();
-        quote = getRandomItem(quotes, time);
+        quote = getQuote(quotes, time);
         
         html = /*html*/`
             <blockquote aria-label="${quote.time}">
@@ -53,9 +52,9 @@ async function updateTime() {
                 <cite>— ${quote.title}, ${quote.author}</cite>
         `;
 
-        if (quote.link) {
+        if (quote.missingQuoteMessage) {
             html += /*html*/`
-                <div id="link">${quote.link}</div>
+                <div id="missing-quote-message">${quote.missingQuoteMessage}</div>
             `;
         }
 

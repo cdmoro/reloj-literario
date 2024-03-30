@@ -22,7 +22,8 @@ body {
     margin: 0 auto;
 }
 
-a, a:visited {
+a,
+a:visited {
     color: #2f2e2c;
 }
 
@@ -69,9 +70,9 @@ cite {
     font-size: 1.7vw;
 }
 
-#link {
-    font-size: .85rem;
-    max-width: 700px;
+#missing-quote-message {
+    font-size: 1.3vw;
+    padding-top: .5rem;
 }
 
 footer {
@@ -85,6 +86,16 @@ footer {
     padding: .5rem;
 }
 
+@media all and (max-width: 959px) and (min-width: 600px) {
+    cite {
+        font-size: 2.4vw;
+    }
+
+    #missing-quote-message {
+        font-size: 2vw;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     blockquote {
         padding: 1rem;
@@ -94,27 +105,29 @@ footer {
     blockquote:after {
         content: unset;
     }
-    
+
     blockquote p {
         font-size: 1.7rem;
     }
 
     cite {
+        font-size: 1rem;
+    }
+
+    #missing-quote-message {
         font-size: .9rem;
     }
 
-    #link {
-        font-size: .75rem;
-    }
-
     footer {
-        font-size: .75rem;
+        font-size: .8rem;
         padding: .5rem 1rem;
     }
-  }
+}
 
-  @media (prefers-color-scheme: dark) {
-    html, body {
+@media (prefers-color-scheme: dark) {
+
+    html,
+    body {
         background: #12121a;
     }
 
@@ -122,7 +135,8 @@ footer {
         color: #a3a29a;
     }
 
-    a, a:visited {
+    a,
+    a:visited {
         color: #a3a29a;
     }
 
@@ -134,4 +148,4 @@ footer {
     blockquote strong {
         color: #D24335;
     }
-  }
+}
