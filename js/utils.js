@@ -13,8 +13,8 @@ const FALLBACK_QUOTES = [
         quote_first: "Error ",
         quote_last: ": novela de Borges no encontrada.",
         quote_time_case: "",
-        title: "The Anglo-American Cyclopaedia (vol. XXVI)",
-        author: "Sócrates",
+        title: "The Anglo-American Cyclopaedia",
+        author: "Vol. XXVI",
         sfw: "yes"
     },
     {
