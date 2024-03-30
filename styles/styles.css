@@ -65,7 +65,7 @@ blockquote strong {
 }
 
 cite {
-    font-size: 1.5vw;
+    font-size: 1.7vw;
 }
 
 #link {
@@ -79,9 +79,9 @@ footer {
     bottom: .5rem;
     left: 0;
     right: 0;
-    width: 100%;
     text-align: center;
     line-height: 1.5;
+    padding: .5rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -95,10 +95,14 @@ footer {
     }
 
     cite {
-        font-size: 1rem;
+        font-size: .9rem;
     }
 
     #link {
+        font-size: .75rem;
+    }
+
+    footer {
         font-size: .75rem;
     }
   }
