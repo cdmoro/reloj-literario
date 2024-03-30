@@ -1,8 +1,13 @@
 import { NOT_FOUND_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
+let statistics;
 let lastTime;
-let times;
+
+async function getStatistics() {
+    const response = await fetch(`../scripts/statistics.json`);
+    statistics = await response.json();
+}
 
 function getRandomItem(quotes, time) {
     if (!quotes.length) {
@@ -14,7 +19,11 @@ function getRandomItem(quotes, time) {
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
-        quote.link = /*html*/`(si sabés de alguna hace click <a href='https://github.com/cdmoro/reloj-literario/issues/new?title=%5B${time}%5D Nueva%20frase' target='_blank'>acá</a> o escribinos!)`;
+
+        const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
+        url.searchParams.set('title', `[${time}] Agregar nueva frase`);
+
+        quote.link = /*html*/`(si sabés de alguna hace click <a href='${url.href}' target='_blank'>acá</a> o escribinos!)`;
     }
 
     return quote;
@@ -55,4 +64,6 @@ async function updateTime() {
 }
 
 updateTime();
+getStatistics();
+
 setInterval(updateTime, 1000);

@@ -17,17 +17,16 @@ body {
 }
 
 #clock {
-    max-width: 700px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
-a:visited {
+a, a:visited {
     color: #a3a29a;
 }
 
 blockquote {
     position: relative;
-    max-width: 700px;
     line-height: 1.4;
     margin: 0;
     padding: .5rem;
@@ -35,7 +34,8 @@ blockquote {
 }
 
 blockquote p {
-    font-size: 1.5rem;
+    font-size: 4.2vw;
+    margin: 0;
 }
 
 blockquote:before,
@@ -64,6 +64,7 @@ blockquote strong {
 }
 
 cite {
+    font-size: 2vw;
     line-height: 2;
     text-align: left;
 }
@@ -72,3 +73,33 @@ cite {
     font-size: .85rem;
     max-width: 700px;
 }
+
+footer {
+    font-size: .85rem;
+    position: fixed;
+    bottom: .5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+    blockquote:before,
+    blockquote:after {
+        content: unset;
+    }
+    
+    blockquote p {
+        font-size: 1.8rem;
+    }
+
+    cite {
+        font-size: 1rem;
+    }
+
+    #link {
+        font-size: .75rem;
+    }
+  }
