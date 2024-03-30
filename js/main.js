@@ -23,7 +23,7 @@ function getRandomItem(quotes, time) {
         const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
         url.searchParams.set('title', `[${time}] Agregar nueva frase`);
 
-        quote.link = /*html*/`(si sabés de alguna hace click <a href='${url.href}' target='_blank'>acá</a> o escribinos!)`;
+        quote.link = /*html*/`(si sabés de alguna hace click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
     }
 
     return quote;

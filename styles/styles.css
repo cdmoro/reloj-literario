@@ -64,9 +64,7 @@ blockquote strong {
 }
 
 cite {
-    font-size: 2vw;
-    line-height: 2;
-    text-align: left;
+    font-size: 1.5vw;
 }
 
 #link {
