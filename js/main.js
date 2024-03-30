@@ -14,17 +14,20 @@ function getRandomItem(quotes, time) {
         quotes = NOT_FOUND_QUOTES;
     }
 
+    const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
+    url.searchParams.set('title', `[${time}] Agregar nueva frase`);
+
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
 
-        const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
-        url.searchParams.set('title', `[${time}] Agregar nueva frase`);
-
-        quote.link = /*html*/`(si sabés de alguna hace click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
+        quote.link = /*html*/`(si sabés de alguna frase hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
     }
+
+    const addQuoteLink = document.getElementById("agregar-frase");
+    addQuoteLink.href = url.href;
 
     return quote;
 }

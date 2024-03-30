@@ -10,7 +10,7 @@ const NOT_FOUND_QUOTES = [
     },
     {
         time: "XX_XX",
-        quote_first: "[Cita de novela de Borges no encontrada para ",
+        quote_first: "[Cita de novela de Borges no encontrada para las ",
         quote_last: "]",
         quote_time_case: "",
         title: "The Anglo-American Cyclopaedia, vol. XXVI",
