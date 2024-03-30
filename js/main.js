@@ -17,7 +17,7 @@ function getRandomItem(quotes, time) {
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
     url.searchParams.set('title', `[${time}] Agregar nueva frase`);
 
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    const quote = Object.assign({}, quotes[Math.floor(Math.random() * quotes.length)]);
 
     if (!quote.quote_time_case) {
         quote.time = time;
@@ -46,7 +46,7 @@ async function updateTime() {
         const response = await fetch(`../times/${fileName}.json`);
         quotes = await response.json();
         quote = getRandomItem(quotes, time);
-
+        
         html = /*html*/`
             <blockquote aria-label="${quote.time}">
                 <p>${quote.quote_first}<strong>${quote.quote_time_case}</strong>${quote.quote_last}</p>
