@@ -4,12 +4,12 @@ html,
 body {
     height: 100%;
     margin: 0;
-    background: #12121a;
+    background: #eaeaec;
 }
 
 body {
     font-family: 'Special Elite', cursive;
-    color: #a3a29a;
+    color: #2f2e2c;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +23,7 @@ body {
 }
 
 a, a:visited {
-    color: #a3a29a;
+    color: #2f2e2c;
 }
 
 blockquote {
@@ -37,12 +37,13 @@ blockquote {
 blockquote p {
     font-size: 3.8vw;
     margin: 0;
+    padding-bottom: .5rem;
 }
 
 blockquote:before,
 blockquote:after {
     position: absolute;
-    color: #a3a29a91;
+    color: #4f4e4991;
     font-size: 8rem;
     width: 4rem;
     height: 4rem;
@@ -85,13 +86,17 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    blockquote {
+        padding: 1rem;
+    }
+
     blockquote:before,
     blockquote:after {
         content: unset;
     }
     
     blockquote p {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     cite {
@@ -104,5 +109,29 @@ footer {
 
     footer {
         font-size: .75rem;
+        padding: .5rem 1rem;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html, body {
+        background: #12121a;
+    }
+
+    body {
+        color: #a3a29a;
+    }
+
+    a, a:visited {
+        color: #a3a29a;
+    }
+
+    blockquote:before,
+    blockquote:after {
+        color: #a3a29a91;
+    }
+
+    blockquote strong {
+        color: #D24335;
     }
   }

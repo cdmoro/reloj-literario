@@ -47,7 +47,7 @@ async function updateTime() {
         html = /*html*/`
             <blockquote aria-label="${quote.time}">
                 <p>${quote.quote_first}<strong>${quote.quote_time_case}</strong>${quote.quote_last}</p>
-                <cite>${quote.title}, ${quote.author}</cite>
+                <cite>— ${quote.title}, ${quote.author}</cite>
         `;
 
         if (quote.link) {
