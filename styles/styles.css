@@ -4,20 +4,21 @@ html,
 body {
     height: 100%;
     margin: 0;
+    background: #12121a;
 }
 
 body {
     font-family: 'Special Elite', cursive;
-    background: #12121a;
     color: #a3a29a;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 #clock {
-    max-width: 850px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -27,14 +28,14 @@ a, a:visited {
 
 blockquote {
     position: relative;
-    line-height: 1.4;
+    line-height: 1.2;
     margin: 0;
     padding: .5rem;
     font-weight: 100;
 }
 
 blockquote p {
-    font-size: 4.2vw;
+    font-size: 3.8vw;
     margin: 0;
 }
 
