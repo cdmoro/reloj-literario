@@ -16,16 +16,17 @@ function getQuote(quotes, time) {
     }
 
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
-    url.searchParams.set('title', `[${time}] Agregar nueva frase`);
+    url.searchParams.set('title', `[${time}] Agregar nueva cita`);
 
     const quote = Object.assign({}, quotes[Math.floor(Math.random() * quotes.length)]);
 
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
-        quote.missingQuoteMessage = /*html*/`(si sabés de alguna frase hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
+        quote.missingQuoteMessage = /*html*/`(si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
     }
 
+    addQuoteLink.textContent = `Agregar cita (${time})`;
     addQuoteLink.href = url.href;
 
     return quote;
@@ -45,9 +46,11 @@ async function updateTime() {
         const response = await fetch(`../times/${fileName}.json`);
         quotes = await response.json();
         quote = getQuote(quotes, time);
+
+        const ariaDescription = quote.quote_first + quote.quote_time_case + quote.quote_last;
         
         html = /*html*/`
-            <blockquote aria-label="${quote.time}">
+            <blockquote aria-label="${quote.time}" aria-description="${ariaDescription}">
                 <p>${quote.quote_first}<strong>${quote.quote_time_case}</strong>${quote.quote_last}</p>
                 <cite>— ${quote.title}, ${quote.author}</cite>
         `;

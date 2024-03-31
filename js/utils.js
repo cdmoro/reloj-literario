@@ -1,7 +1,7 @@
 const FALLBACK_QUOTES = [
     {
         time: "",
-        quote_first: "Seguimos buscando una frase para las ",
+        quote_first: "Seguimos buscando una cita para las ",
         quote_last: ".",
         quote_time_case: "",
         title: "El Quijote",
@@ -28,7 +28,7 @@ const FALLBACK_QUOTES = [
     },
     {
         time: "",
-        quote_first: "Bitácora del capitán:<br>",
+        quote_first: "Bitácora del Capitán:<br>",
         quote_last: " hrs:  Atardecer pintoresco sobre el horizonte oeste. Se mantienen guardias en cubierta para vigilancia nocturna. Aún no hay novedades de la cita.",
         quote_time_case: "",
         title: "Moby Dick",
