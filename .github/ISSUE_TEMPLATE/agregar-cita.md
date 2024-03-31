@@ -7,13 +7,11 @@ title: '[XX:XX] Agregar cita'
 
 # Agregar cita
 
-## Datos obligatorios
-
 - Hora:
 - Libro: 
 - Autor/es: 
 
 Texto de la cita
 
-> Tip: si la cita tiene varios renglones usá `<br>` al final de cada línea)
+<!-- si la cita tiene varios renglones usá `<br>` al final de cada línea -->
 
