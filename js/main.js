@@ -46,11 +46,9 @@ async function updateTime() {
         const response = await fetch(`../times/${fileName}.json`);
         quotes = await response.json();
         quote = getQuote(quotes, time);
-
-        const ariaDescription = quote.quote_first + quote.quote_time_case + quote.quote_last;
         
         html = /*html*/`
-            <blockquote aria-label="${quote.time}" aria-description="${ariaDescription}">
+            <blockquote aria-label="${quote.time}">
                 <p>${quote.quote_first}<strong>${quote.quote_time_case}</strong>${quote.quote_last}</p>
                 <cite>— ${quote.title}, ${quote.author}</cite>
         `;
