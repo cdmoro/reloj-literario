@@ -1,5 +1,7 @@
 # Reloj literario
 
+![reloj-literario](https://github.com/cdmoro/reloj-literario/assets/28156761/624625bc-9606-48cb-a709-139b4401a89f)
+
 Un reloj que te dice la hora usando citas de libros, para verlo hagan click acá https://reloj-literario.netlify.app/
 
 Este proyecto es una copia de otro [proyecto de Johannes Enevoldsen](https://github.com/JohannesNE/literature-clock) que usa citas en inglés y que, a su vez, se inspiró en [otro proyecto](https://www.instructables.com/Literary-Clock-Made-From-E-reader/). Y como el español es un idioma tan hermoso que no podía no tener su reloj literario.
