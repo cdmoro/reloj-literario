@@ -16,7 +16,8 @@ function getQuote(quotes, time) {
     }
 
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
-    url.searchParams.set('title', `[${time}] Agregar nueva cita`);
+    url.searchParams.set('template', 'agregar-cita.md');
+    url.searchParams.set('title', `[${time}] Agregar cita`);
 
     const quote = Object.assign({}, quotes[Math.floor(Math.random() * quotes.length)]);
 
