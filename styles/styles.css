@@ -18,7 +18,7 @@ body {
 }
 
 #clock {
-    max-width: 900px;
+    max-width: 80vw;
     margin: 0 auto;
 }
 
@@ -30,13 +30,11 @@ a:visited {
 blockquote {
     position: relative;
     line-height: 1.2;
-    margin: 0;
-    padding: .5rem;
     font-weight: 100;
 }
 
 blockquote p {
-    font-size: 3.8vw;
+    font-size: 4vw;
     margin: 0;
     padding-bottom: .5rem;
 }
@@ -78,12 +76,12 @@ cite {
 footer {
     font-size: .85rem;
     position: fixed;
-    bottom: .5rem;
+    bottom: 0;
     left: 0;
     right: 0;
     text-align: center;
     line-height: 1.5;
-    padding: .5rem;
+    padding: 1rem 1.5rem;
 }
 
 @media all and (max-width: 959px) and (min-width: 600px) {
@@ -97,8 +95,12 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    #clock {
+        max-width: unset;
+    }
+
     blockquote {
-        padding: 1rem;
+        margin: 1.5rem;
     }
 
     blockquote:before,
@@ -107,7 +109,7 @@ footer {
     }
 
     blockquote p {
-        font-size: 1.7rem;
+        font-size: 2.2rem;
     }
 
     cite {
@@ -120,12 +122,10 @@ footer {
 
     footer {
         font-size: .8rem;
-        padding: .5rem 1rem;
     }
 }
 
 @media (prefers-color-scheme: dark) {
-
     html,
     body {
         background: #12121a;
