@@ -41,13 +41,3 @@ body:
         required: true
       - label: Black cat
 ---
-
-# Agregar cita
-
-- Hora:
-- Libro: 
-- Autor/es:
-
-Texto de la cita
-
-<!-- si la cita tiene varios renglones usá `<br>` al final de cada línea -->
