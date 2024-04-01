@@ -39,7 +39,7 @@ body:
     options:
       - label: Orange cat (required. Everyone likes orange cats.)
         required: true
-      - label: **Black cat**
+      - label: Black cat
 ---
 
 # Agregar cita
