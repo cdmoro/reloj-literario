@@ -10,11 +10,21 @@ async function getStatistics() {
     statistics = await response.json();
 }
 
-function getQuote(quotes, time) {
-    if (!quotes.length) {
-        quotes = FALLBACK_QUOTES;
-    }
+async function getQuotes(fileName) {
+    try {
+        const response = await fetch(`../times/${fileName}.json`);
 
+        if (!response.ok) {
+            return FALLBACK_QUOTES;
+        }
+
+        return await response.json();
+    } catch (error) {
+        return FALLBACK_QUOTES;
+    }
+}
+
+function getQuote(quotes, time) {
     const url = new URL('https://github.com/cdmoro/reloj-literario/issues/new');
     url.searchParams.set('template', 'agregar-cita.yaml');
     url.searchParams.set('title', `[${time}] Agregar cita`);
@@ -44,8 +54,9 @@ async function updateTime() {
     const time = fileName.replace("_", ":");
 
     if (lastTime !== time) {
-        const response = await fetch(`../times/${fileName}.json`);
-        quotes = await response.json();
+        //const response = await fetch(`../times/${fileName}.json`);
+        //quotes = await response.json();
+        quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
         
         html = /*html*/`
@@ -62,7 +73,7 @@ async function updateTime() {
 
         html += `</blockquote>`;
 
-        clock.innerHTML = html;
+        clock.innerHTML = html.replace(/\r\n/g, "<br>");
         lastTime = time;
     }
 }

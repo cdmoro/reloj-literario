@@ -1,13 +1,16 @@
+import shutil
 import pandas as pd
 import json
 import os
 
 def csv_to_json(input_csv, output_folder):
+    shutil.rmtree(output_folder)
+
     minutes = 1440
     # Contador de citas
     quotes = 0
     # Leer el archivo CSV
-    df = pd.read_csv(input_csv, header=None, names=['time', 'quote_time', 'quote', 'title', 'author'])
+    df = pd.read_csv(input_csv, header=None, names=['time', 'quote_time', 'quote', 'title', 'author', 'sfw'])
 
     # Rellenar los valores faltantes con texto predeterminado
     df.fillna('', inplace=True)
@@ -38,7 +41,7 @@ def csv_to_json(input_csv, output_folder):
                 'quote_time_case': row['quote_time'],
                 'title': row['title'],
                 'author': row['author'],
-                'sfw': 'yes'
+                'sfw': row['sfw']
             }
             data.append(entry)
         

@@ -1,11 +1,11 @@
 [
     {
         "time": "09:00",
-        "quote_first": "Eran las ",
-        "quote_last": " cuando el cartero toc\u00f3 el timbre y entreg\u00f3 la carta que cambiar\u00eda su vida.",
-        "quote_time_case": "nueve de la ma\u00f1ana",
-        "title": "El amor en los tiempos de c\u00f3lera",
+        "quote_first": "Hasta aquel jueves indeseable, en que el m\u00e9dico menos notorio de los muchos que lo hab\u00edan visto lo cit\u00f3 a ",
+        "quote_last": " en el pabell\u00f3n de neurolog\u00eda.",
+        "quote_time_case": "las nueve de la ma\u00f1ana",
+        "title": "Doce cuentos peregrinos",
         "author": "Gabriel Garc\u00eda M\u00e1rquez",
-        "sfw": "yes"
+        "sfw": true
     }
 ]
