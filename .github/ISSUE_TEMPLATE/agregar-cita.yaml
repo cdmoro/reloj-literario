@@ -1,7 +1,8 @@
-name: Agregar cita (test)
+name: Agregar cita
 description: Agregar nueva cita o una variante de una cita existente para una determinada hora.
 title: "[XX:XX]: Agregar cita"
-labels: "cita"
+labels: 
+  - "agregar-cita"
 body:
   - type: markdown
     attributes:
