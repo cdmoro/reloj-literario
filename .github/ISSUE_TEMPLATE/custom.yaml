@@ -1,0 +1,51 @@
+name: Agregar cita (test)
+about: Agregar nueva cita o una variante de una cita existente para una determinada hora.
+title: "[XX:XX]: Agregar cita"
+labels: ["cita"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # Agregar cita
+  - type: input
+    id: time
+    attributes:
+      label: Hora
+      description: No te olvides de actualizarla en el título también!
+      placeholder: ej. 23:06
+    validations:
+      required: true
+  - type: input
+    id: book
+    attributes:
+      label: Libro
+      placeholder: ej. Los detectives salvajes
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Autor
+      placeholder: ej. Roberto Bolaño
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: Texto de la cita
+      placeholder: Uno de los inconvenientes de robar libros -sobre todo para un aprendiz como yo- es que la elección está supeditada a la oportunidad.
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: Dónde leíste la cita?
+      description: Si podés adjuntar una imagen de la página sería espectacular (si no, no importa)
+      options:
+        - Tengo el libro
+        - La vi por internet
+        - La soñé
+        - Otro
+      default: 0
+    validations:
+      required: true
