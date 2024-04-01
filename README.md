@@ -22,7 +22,7 @@ Respecto a las citas faltantas, existen cinco variantes por defecto para no most
 
 # Formas de colaborar
 
-- Enviando todas las frases que conozcas (por acá o por nuestras redes sociales) que mencionen una hora en particular 
+- Enviando todas las frases que conozcas ([creando un issue](https://github.com/cdmoro/reloj-literario/issues/new?assignees=&labels=agregar-cita&projects=&template=agregar-cita.yaml&title=%5BXX%3AXX%5D%3A+Agregar+cita) o por nuestras redes sociales) que mencionen una hora en particular
 - Compartiendo el proyecto en tus redes sociales y contactos
 - Dándome amor en forma de dinero a través de [Patreon](https://patreon.com/cdmoro), [Buy me a coffee](https://buymeacoffee.com/cdmoro) y, por supuesto, [Cafecito](http://cafecito.app/cdmoro)
 
