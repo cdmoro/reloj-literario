@@ -4,7 +4,8 @@ import json
 import os
 
 def csv_to_json(input_csv, output_folder):
-    shutil.rmtree(output_folder)
+    if os.path.exists(output_folder):
+        shutil.rmtree(output_folder)
 
     minutes = 1440
     # Contador de citas
@@ -49,7 +50,7 @@ def csv_to_json(input_csv, output_folder):
             quotes += 1
 
         # Crear el nombre del archivo JSON
-        json_filename = os.path.join(output_folder, f"{key}.json")
+        json_filename = os.path.join(output_folder, f"{key.replace(":", "_")}.json")
 
         # Escribir los datos en el archivo JSON
         with open(json_filename, 'w') as json_file:
@@ -64,7 +65,7 @@ def csv_to_json(input_csv, output_folder):
             }, json_file, indent=4)
 
 # Ruta al archivo CSV de entrada
-input_csv = 'quotes.csv'
+input_csv = './scripts/quotes.csv'
 
 # Carpeta de salida para los archivos JSON
 output_folder = '../times'
