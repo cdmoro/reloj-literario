@@ -8,8 +8,8 @@ body:
     attributes:
       value: "# Agregar cita"
   - type: markdown
-  attributes:
-    value: Podés agregar una nueva cita o agregar una variante para una hora ya existente, todo suma 😃
+    attributes:
+      value: Podés agregar una nueva cita o agregar una variante para una hora ya existente, todo suma 😃
   - type: input
     id: time
     attributes:
