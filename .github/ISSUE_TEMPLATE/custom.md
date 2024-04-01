@@ -1,43 +1,63 @@
 ---
 name: Agregar cita test
 about: Agregar nueva cita o una variante de una cita existente para una determinada hora.
-title: '[XX:XX] Agregar cita'
+title: "[XX:XX] Agregar cita"
+labels: ["nueva-cita"]
 body:
   - type: markdown
     attributes:
-      value: "## Welcome!"
-  - type: markdown
-    attributes:
       value: |
-        Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
+        Thanks for taking the time to fill out this bug report!
   - type: input
-    id: prevalence
+    id: contact
     attributes:
-      label: Bug prevalence
-      description: "How often do you or others encounter this bug?"
-      placeholder: "Whenever I visit the user account page (1-2 times a week)"
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
     validations:
-      required: true
+      required: false
   - type: textarea
-    id: repro
+    id: what-happened
     attributes:
-      label: Reproduction steps
-      description: "How do you trigger this bug? Please walk us through it step by step."
-      value: |
-        1.
-        2.
-        3.
-        ...
-      render: bash
+      label: What happened?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
     validations:
       required: true
-  - type: checkboxes
-    id: cat-preferences
+  - type: dropdown
+    id: version
     attributes:
-      label: What kinds of cats do you like?
-      description: You may select more than one.
+      label: Version
+      description: What version of our software are you running?
       options:
-        - label: Orange cat (required. Everyone likes orange cats.)
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
           required: true
-        - label: Black cat
 ---
