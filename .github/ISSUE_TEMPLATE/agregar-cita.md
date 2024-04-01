@@ -1,7 +1,10 @@
 ---
 name: Agregar cita
-about: Agregar nueva cita o una variante de una cita existente para una determinada hora.
-title: '[XX:XX] Agregar cita'
+about: Agregar nueva cita o una variante de una cita existente para una determinada
+  hora.
+title: "[XX:XX] Agregar cita"
+labels: ''
+assignees: ''
 
 ---
 
@@ -14,4 +17,3 @@ title: '[XX:XX] Agregar cita'
 Texto de la cita
 
 <!-- si la cita tiene varios renglones usá `<br>` al final de cada línea -->
-
