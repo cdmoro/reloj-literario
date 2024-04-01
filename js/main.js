@@ -2,6 +2,8 @@ import { FALLBACK_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
 const addQuoteLink = document.getElementById("add-quote");
+const urlParams = new URLSearchParams(window.location.search);
+const testTime = urlParams.get('time');
 let statistics;
 let lastTime;
 
@@ -41,21 +43,22 @@ function getQuote(quotes, time) {
     addQuoteLink.href = url.href;
 
     return quote;
-}
+}   
 
-async function updateTime() {
+async function updateTime(testTime) {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
     let quotes = [];
     let quote = {};
     let html = "";
-    const fileName = `${hours.toString().padStart(2, '0')}_${minutes.toString().padStart(2, '0')}`;
-    const time = fileName.replace("_", ":");
+
+    const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    const fileName = time.replace(":", "_");
+
+    console.log(lastTime, time);
 
     if (lastTime !== time) {
-        //const response = await fetch(`../times/${fileName}.json`);
-        //quotes = await response.json();
         quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
         
@@ -78,7 +81,9 @@ async function updateTime() {
     }
 }
 
-updateTime();
+updateTime(testTime);
 getStatistics();
 
-setInterval(updateTime, 1000);
+if (!testTime) {
+    setInterval(updateTime, 1000);
+}

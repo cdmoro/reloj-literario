@@ -65,7 +65,7 @@ def csv_to_json(input_csv, output_folder):
             }, json_file, indent=4)
 
 # Ruta al archivo CSV de entrada
-input_csv = './scripts/quotes.csv'
+input_csv = 'quotes.csv'
 
 # Carpeta de salida para los archivos JSON
 output_folder = '../times'
