@@ -40,7 +40,7 @@ body:
     id: version
     attributes:
       label: Dónde leíste la cita?
-      description: Si podés adjuntar una imagen de la página sería espectacular (si no, no importa)
+      description: Si tenés el libro y podés adjuntar una imagen de la página sería espectacular (si no, no importa)
       options:
         - Tengo el libro
         - La vi por internet
