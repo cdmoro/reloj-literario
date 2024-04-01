@@ -2,7 +2,7 @@ name: Agregar cita
 description: Agregar nueva cita o una variante de una cita existente para una determinada hora.
 title: "[XX:XX]: Agregar cita"
 labels: 
-  - "agregar-cita"
+  - agregar-cita
 body:
   - type: markdown
     attributes:
@@ -35,20 +35,6 @@ body:
     attributes:
       label: Texto de la cita
       placeholder: Uno de los inconvenientes de robar libros -sobre todo para un aprendiz como yo- es que la elección está supeditada a la oportunidad.
-      render: shell
+      description: Si tenés el libro y además de transcribir la cita podés adjuntar una imagen de la página sería espectacular (si no, no importa)
     validations:
       required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Dónde leíste la cita?
-      options:
-        - Tengo el libro
-        - La vi por internet
-        - La soñé
-        - Otro
-    validations:
-      required: false
-  - type: markdown
-    attributes:
-      value: "Si tenés el libro y podés adjuntar una imagen de la página sería espectacular (si no, no importa)"
