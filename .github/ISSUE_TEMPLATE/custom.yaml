@@ -46,6 +46,5 @@ body:
         - La vi por internet
         - La soñé
         - Otro
-      default: 0
     validations:
       required: true
