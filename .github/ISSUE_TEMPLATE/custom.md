@@ -1,8 +1,8 @@
 ---
-name: Agregar cita test
-about: Agregar nueva cita o una variante de una cita existente para una determinada hora.
-title: "[XX:XX] Agregar cita"
-labels: ["nueva-cita"]
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
