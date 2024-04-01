@@ -56,8 +56,6 @@ async function updateTime(testTime) {
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     const fileName = time.replace(":", "_");
 
-    console.log(lastTime, time);
-
     if (lastTime !== time) {
         quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
