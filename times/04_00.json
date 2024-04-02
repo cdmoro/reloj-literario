@@ -7,5 +7,14 @@
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
         "sfw": true
+    },
+    {
+        "time": "04:00",
+        "quote_first": "Belano dijo son las ",
+        "quote_last": ". En ese momento supe con resignaci\u00f3n que no iba a poder dormir.",
+        "quote_time_case": "cuatro de la ma\u00f1ana",
+        "title": "Los detectives salvajes",
+        "author": "Roberto Bola\u00f1o",
+        "sfw": true
     }
 ]

@@ -36,7 +36,7 @@ function getQuote(quotes, time) {
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
-        quote.missingQuoteMessage = /*html*/`(si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!)`;
+        quote.missingQuoteMessage = /*html*/`<span class="star">*</span> si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!`;
     }
 
     addQuoteLink.textContent = `Agregar cita (${time})`;
@@ -62,13 +62,13 @@ async function updateTime(testTime) {
         
         html = /*html*/`
             <blockquote aria-label="${quote.time}">
-                <p>${quote.quote_first}<strong>${quote.quote_time_case}</strong>${quote.quote_last}</p>
+                <p>${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}</p>
                 <cite>— ${quote.title}, ${quote.author}</cite>
         `;
 
         if (quote.missingQuoteMessage) {
             html += /*html*/`
-                <div id="missing-quote-message">${quote.missingQuoteMessage}</div>
+                <div id="footnote">${quote.missingQuoteMessage}</div>
             `;
         }
 

@@ -7,5 +7,14 @@
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
         "sfw": true
+    },
+    {
+        "time": "23:00",
+        "quote_first": "A las ",
+        "quote_last": " abandonamos la caverna.",
+        "quote_time_case": "11 de la noche",
+        "title": "El juguete rabioso",
+        "author": "Roberto Arlt",
+        "sfw": true
     }
 ]

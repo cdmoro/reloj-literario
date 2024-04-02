@@ -11,7 +11,7 @@ def csv_to_json(input_csv, output_folder):
     # Contador de citas
     quotes = 0
     # Leer el archivo CSV
-    df = pd.read_csv(input_csv, header=None, names=['time', 'quote_time', 'quote', 'title', 'author', 'sfw'])
+    df = pd.read_csv(input_csv, header=None, names=['time', 'quote_time', 'quote', 'title', 'author', 'sfw', 'star'])
 
     # Rellenar los valores faltantes con texto predeterminado
     df.fillna('', inplace=True)
