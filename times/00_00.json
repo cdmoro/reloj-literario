@@ -34,5 +34,14 @@
         "title": "Los siete locos",
         "author": "Roberto Arlt",
         "sfw": true
+    },
+    {
+        "time": "00:00",
+        "quote_first": "Ella, tallada ",
+        "quote_last": "\r\npor la inquietud de mis ojos alucinados:\r\nella, grabada en los maderos del bosque\r\npor los cuchillos de mis manos",
+        "quote_time_case": "en el coraz\u00f3n de la noche",
+        "title": "El hondero entusiasta",
+        "author": "Pablo Neruda",
+        "sfw": true
     }
 ]

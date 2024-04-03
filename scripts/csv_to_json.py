@@ -8,8 +8,6 @@ def csv_to_json(input_csv, output_folder):
         shutil.rmtree(output_folder)
 
     minutes = 1440
-    # Contador de citas
-    quotes = 0
     # Leer el archivo CSV
     df = pd.read_csv(input_csv)
 
@@ -26,7 +24,7 @@ def csv_to_json(input_csv, output_folder):
         data = []
         for index, row in group.iterrows():            
             # Dividir la cita basada en Quote time
-            quote_parts = row['Quote'].split(row['Quote time'])
+            quote_parts = row['Quote'].split(row['Quote time'], 1)
             quote_first = quote_parts[0]
             quote_last = quote_parts[1]
 
@@ -41,9 +39,6 @@ def csv_to_json(input_csv, output_folder):
                 'sfw': row['SFW']
             }
             data.append(entry)
-        
-        if (len(data)):
-            quotes += 1
 
         # Crear el nombre del archivo JSON
         json_filename = os.path.join(output_folder, f'{key.replace(':', '_')}.json')
@@ -52,17 +47,22 @@ def csv_to_json(input_csv, output_folder):
         with open(json_filename, 'w') as json_file:
             json.dump(data, json_file, indent=4)
 
+    # print(df.sort_values(['Quote']).groupby('Author')['Quote'].nunique())
+
+     # Cantidad de horas con citas
+    times_with_quote = df.groupby('Time')['Time'].nunique().sum()
+    
     statistics = {
-        'quotes': quotes,
+        'times_with_quotes': times_with_quote,
+        'times_without_quotes': minutes - times_with_quote,
         'total': minutes,
-        'missing_quotes': minutes - quotes,
-        'progress': round((quotes * 100) / minutes, 2)
+        'progress': round((times_with_quote * 100) / minutes, 2)
     }
 
-    print('Statistics:', json.dumps(statistics, indent=4))
+    print('Statistics:', json.dumps(statistics, indent=4, default=int))
 
     with open('statistics.json', 'w') as json_file:
-        json.dump(statistics, json_file, indent=4)
+        json.dump(statistics, json_file, indent=4, default=int)
 
 # Ruta al archivo CSV de entrada
 input_csv = 'quotes.csv'

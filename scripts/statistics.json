@@ -1,6 +1,6 @@
 {
-    "quotes": 29,
+    "times_with_quotes": 30,
+    "times_without_quotes": 1410,
     "total": 1440,
-    "missing_quotes": 1411,
-    "progress": 2.01
+    "progress": 2.08
 }
