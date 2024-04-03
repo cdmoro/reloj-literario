@@ -23,7 +23,7 @@ body {
 
 body.zen-mode #footnote,
 body.zen-mode #quote-time-bar,
-body.zen-mode footer {
+body.zen-mode footer #menu {
     display: none;
 }
 
@@ -109,6 +109,10 @@ cite {
     font-size: 1.5rem;
     text-decoration: none;
     display: none;
+}
+
+#exit-zen:hover {
+    color: var(--accent-color);
 }
 
 footer {
