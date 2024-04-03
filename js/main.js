@@ -105,14 +105,15 @@ async function updateTime(testTime) {
 
 function updateModeLinks() {
     const zenModeURL = new URL(window.location);
-    if (isZenMode) {
-        zenModeURL.searchParams.delete("zen");
-    } else {
-        zenModeURL.searchParams.set("zen", true);
-    }
+    zenModeURL.searchParams.set("zen", true);
     const zenModeLink = document.getElementById("zen-mode");
     zenModeLink.textContent = `Zen [${isZenMode ? 'ON' : 'OFF'}]`;
     zenModeLink.href = zenModeURL.href;
+
+    const exitZenModeUrl = new URL(window.location);
+    const exitZenModeLink = document.getElementById("exit-zen");
+    exitZenModeUrl.searchParams.delete("zen");
+    exitZenModeLink.href = exitZenModeUrl;
 
     const workModeURL = new URL(window.location);
     if (isWorkMode) {

@@ -27,6 +27,10 @@ body.zen-mode footer {
     display: none;
 }
 
+body.zen-mode #exit-zen {
+    display: block;
+}
+
 #clock {
     max-width: 80vw;
     margin: 0 auto;
@@ -96,6 +100,17 @@ cite {
     transition: width 1s linear;
 }
 
+#exit-zen {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: none;
+}
+
 footer {
     font-size: .85rem;
     position: fixed;
@@ -141,6 +156,10 @@ footer {
 
     #footnote {
         font-size: .9rem;
+    }
+
+    #exit-zen {
+        font-size: 1.3rem;
     }
 
     footer {
