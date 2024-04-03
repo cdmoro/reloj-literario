@@ -6,8 +6,8 @@ const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
 const testQuote = urlParams.get('quote');
-const zenMode = urlParams.has('zen');
-const sfw = urlParams.has('sfw');
+const isZenMode = urlParams.has('zen');
+const isWorkMode = urlParams.has('work');
 let statistics;
 let lastTime;
 
@@ -26,7 +26,7 @@ async function getQuotes(fileName) {
 
         let quotes = await response.json();
 
-        if (sfw) {
+        if (isWorkMode) {
             quotes = quotes.filter(q => q.sfw);
         }
 
@@ -51,29 +51,31 @@ function getQuote(quotes, time) {
         quote.time = time;
         quote.quote_time_case = time;
         quote.missingQuoteMessage = /*html*/`<span class="star">*</span> si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!`;
+
+        if (!isZenMode) {
+            quote.quote_last += '*';
+        }
     }
 
     addQuoteLink.href = url.href;
 
     return quote;
-}   
+}
 
 async function updateTime(testTime) {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    const milliseconds = now.getMilliseconds() / 1000;
-    const secondsWithDecimal = seconds + milliseconds;
     let quotes = [];
     let quote = {};
-    let html = [];
+    let html = '';
 
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     const fileName = time.replace(":", "_");
 
     if (!testTime && !testQuote) {
-        quoteTimeBar.style.width = `${(secondsWithDecimal*100) / 60}%`;
+        quoteTimeBar.style.width = `${(seconds / 60) * 100}%`;
         quoteTimeBar.style.transition = seconds === 0 ? 'none' : 'width 1s linear';
     }
 
@@ -85,27 +87,51 @@ async function updateTime(testTime) {
             document.title = `[${time}] Reloj Literario`;
         }
 
-        html.push(`<blockquote aria-label="${quote.time}">`);
-        html.push(`<p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>`);
-        html.push(`<cite>— ${quote.title}, ${quote.author}</cite>`);
+        html = /*html*/`
+        <blockquote aria-label="${quote.time}">
+            <p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>
+            <cite>— ${quote.title}, ${quote.author}</cite>`;
 
         if (quote.missingQuoteMessage) {
-            html.push(`<div id="footnote">${quote.missingQuoteMessage}</div>`);
+            html += /*html*/`<div id="footnote">${quote.missingQuoteMessage}</div>`;
         }
 
-        html.push(`</blockquote>`);
+        html += /*html*/`</blockquote>`;
 
-        clock.innerHTML = html.join('').replace(/\r\n/g, "<br>");
+        clock.innerHTML = html.replace(/\r\n/g, "<br>");
         lastTime = time;
     }
 }
 
-if(!zenMode) {
+function updateModeLinks() {
+    const zenModeURL = new URL(window.location);
+    if (isZenMode) {
+        zenModeURL.searchParams.delete("zen");
+    } else {
+        zenModeURL.searchParams.set("zen", true);
+    }
+    const zenModeLink = document.getElementById("zen-mode");
+    zenModeLink.textContent = `Zen [${isZenMode ? 'ON' : 'OFF'}]`;
+    zenModeLink.href = zenModeURL.href;
+
+    const workModeURL = new URL(window.location);
+    if (isWorkMode) {
+        workModeURL.searchParams.delete("work");
+    } else {
+        workModeURL.searchParams.set("work", true);
+    }
+    const workModeLink = document.getElementById("work-mode");
+    workModeLink.textContent = `Trabajo [${isWorkMode ? 'ON' : 'OFF'}]`;
+    workModeLink.href = workModeURL.href;
+}
+
+if (!isZenMode) {
     document.body.classList.remove('zen-mode');
 }
 
 updateTime(testTime);
 getStatistics();
+updateModeLinks();
 
 if (!testTime && !testQuote) {
     setInterval(updateTime, 1000);
