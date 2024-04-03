@@ -5,6 +5,7 @@ const quoteTimeBar = document.getElementById("quote-time-bar");
 const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
+const testQuote = urlParams.get('quote');
 const zenMode = urlParams.has('zen');
 const sfw = urlParams.has('sfw');
 let statistics;
@@ -66,12 +67,12 @@ async function updateTime(testTime) {
     const secondsWithDecimal = seconds + milliseconds;
     let quotes = [];
     let quote = {};
-    let html = "";
+    let html = [];
 
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     const fileName = time.replace(":", "_");
 
-    if (!testTime) {
+    if (!testTime || !testQuote) {
         quoteTimeBar.style.width = `${(secondsWithDecimal*100) / 60}%`;
         quoteTimeBar.style.transition = seconds === 0 ? 'none' : 'width 1s linear';
     }
@@ -79,22 +80,26 @@ async function updateTime(testTime) {
     if (lastTime !== time) {
         quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
+
+        document.title = `[${time}] Reloj Literario`
+
+        html.push(`<blockquote aria-label="${quote.time}">`);
+
+        if (testQuote) {
+            html.push(`<p>${testQuote}</p>`)
+        } else {
+            html.push(`<p>${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}</p>`);
+        }
         
-        html = /*html*/`
-            <blockquote aria-label="${quote.time}">
-                <p>${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}</p>
-                <cite>— ${quote.title}, ${quote.author}</cite>
-        `;
+        html.push(`<cite>— ${quote.title}, ${quote.author}</cite>`);
 
         if (quote.missingQuoteMessage) {
-            html += /*html*/`
-                <div id="footnote">${quote.missingQuoteMessage}</div>
-            `;
+            html.push(`<div id="footnote">${quote.missingQuoteMessage}</div>`);
         }
 
-        html += `</blockquote>`;
+        html.push(`</blockquote>`);
 
-        clock.innerHTML = html.replace(/\r\n/g, "<br>");
+        clock.innerHTML = html.join('').replace(/\r\n/g, "<br>");
         lastTime = time;
     }
 }
@@ -106,6 +111,6 @@ if(!zenMode) {
 updateTime(testTime);
 getStatistics();
 
-if (!testTime) {
+if (!testTime || !testQuote) {
     setInterval(updateTime, 1000);
 }
