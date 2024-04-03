@@ -72,7 +72,7 @@ async function updateTime(testTime) {
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     const fileName = time.replace(":", "_");
 
-    if (!testTime || !testQuote) {
+    if (!testTime && !testQuote) {
         quoteTimeBar.style.width = `${(secondsWithDecimal*100) / 60}%`;
         quoteTimeBar.style.transition = seconds === 0 ? 'none' : 'width 1s linear';
     }
@@ -81,16 +81,12 @@ async function updateTime(testTime) {
         quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
 
-        document.title = `[${time}] Reloj Literario`
+        if (!testTime && !testQuote) {
+            document.title = `[${time}] Reloj Literario`;
+        }
 
         html.push(`<blockquote aria-label="${quote.time}">`);
-
-        if (testQuote) {
-            html.push(`<p>${testQuote}</p>`)
-        } else {
-            html.push(`<p>${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}</p>`);
-        }
-        
+        html.push(`<p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>`);
         html.push(`<cite>— ${quote.title}, ${quote.author}</cite>`);
 
         if (quote.missingQuoteMessage) {
@@ -111,6 +107,6 @@ if(!zenMode) {
 updateTime(testTime);
 getStatistics();
 
-if (!testTime || !testQuote) {
+if (!testTime && !testQuote) {
     setInterval(updateTime, 1000);
 }
