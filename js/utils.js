@@ -6,7 +6,7 @@ const FALLBACK_QUOTES = [
         quote_time_case: "",
         title: "El Quijote",
         author: "Pierre Menard",
-        sfw: "yes"
+        sfw: true
     },
     {
         time: "",
@@ -15,7 +15,7 @@ const FALLBACK_QUOTES = [
         quote_time_case: "",
         title: "The Anglo-American Cyclopaedia",
         author: "Vol. XXVI",
-        sfw: "yes"
+        sfw: true
     },
     {
         time: "",
@@ -24,7 +24,7 @@ const FALLBACK_QUOTES = [
         quote_time_case: "",
         title: "Seymour Skinner",
         author: "Los Simpsons",
-        sfw: "yes"
+        sfw: true
     },
     {
         time: "",
@@ -33,7 +33,7 @@ const FALLBACK_QUOTES = [
         quote_time_case: "",
         title: "Moby Dick",
         author: "Capitán Ahab",
-        sfw: "yes"
+        sfw: true
     },
     {
         time: "",
@@ -42,7 +42,7 @@ const FALLBACK_QUOTES = [
         quote_time_case: "",
         title: "El Quijote",
         author: "Pierre Menard",
-        sfw: "yes"
+        sfw: true
     }
 ];
 

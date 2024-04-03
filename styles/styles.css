@@ -21,6 +21,12 @@ body {
     overflow: hidden;
 }
 
+body.zen-mode #footnote,
+body.zen-mode #quote-time-bar,
+body.zen-mode footer {
+    display: none;
+}
+
 #clock {
     max-width: 80vw;
     margin: 0 auto;

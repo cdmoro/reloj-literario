@@ -5,6 +5,8 @@ const quoteTimeBar = document.getElementById("quote-time-bar");
 const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
+const zenMode = urlParams.has('zen');
+const sfw = urlParams.has('sfw');
 let statistics;
 let lastTime;
 
@@ -21,7 +23,17 @@ async function getQuotes(fileName) {
             return FALLBACK_QUOTES;
         }
 
-        return await response.json();
+        let quotes = await response.json();
+
+        if (sfw) {
+            quotes = quotes.filter(q => q.sfw);
+        }
+
+        if (!quotes.length) {
+            return FALLBACK_QUOTES;
+        }
+
+        return quotes;
     } catch (error) {
         return FALLBACK_QUOTES;
     }
@@ -49,12 +61,20 @@ async function updateTime(testTime) {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const milliseconds = now.getMilliseconds() / 1000;
+    const secondsWithDecimal = seconds + milliseconds;
     let quotes = [];
     let quote = {};
     let html = "";
 
     const time = testTime || `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     const fileName = time.replace(":", "_");
+
+    if (!testTime) {
+        quoteTimeBar.style.width = `${(secondsWithDecimal*100) / 60}%`;
+        quoteTimeBar.style.transition = seconds === 0 ? 'none' : 'width 1s linear';
+    }
 
     if (lastTime !== time) {
         quotes = await getQuotes(fileName);
@@ -79,14 +99,8 @@ async function updateTime(testTime) {
     }
 }
 
-function updateQuoteTime() {
-    const now = new Date();
-    const s = now.getSeconds();
-    const ms = now.getMilliseconds() / 1000;
-    const seconds = s + ms;
-
-    quoteTimeBar.style.width = `${(seconds*100) / 60}%`;
-    quoteTimeBar.style.transition = s === 0 ? 'none' : 'width 1s linear';
+if(!zenMode) {
+    document.body.classList.remove('zen-mode');
 }
 
 updateTime(testTime);
@@ -94,5 +108,4 @@ getStatistics();
 
 if (!testTime) {
     setInterval(updateTime, 1000);
-    setInterval(updateQuoteTime, 1000);
 }
