@@ -74,11 +74,20 @@ cite {
 
 #footnote {
     font-size: 1.3vw;
-    padding-top: .5rem;
+    padding-top: 1.5rem;
 }
 
 #footnote .star {
     color: var(--accent-color);
+}
+
+#quote-time-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #4f4e4991;
+    transition: width 1s linear;
 }
 
 footer {
@@ -94,7 +103,7 @@ footer {
 
 @media all and (max-width: 959px) and (min-width: 600px) {
     cite {
-        font-size: 2.4vw;
+        font-size: 2.3vw;
     }
 
     #footnote {
@@ -155,5 +164,9 @@ footer {
 
     blockquote strong {
         color: #D24335;
+    }
+
+    #quote-time-bar {
+        background-color: #a3a29a91;
     }
 }

@@ -1,6 +1,7 @@
 import { FALLBACK_QUOTES } from './utils.js';
 
 const clock = document.getElementById("clock");
+const quoteTimeBar = document.getElementById("quote-time-bar");
 const addQuoteLink = document.getElementById("add-quote");
 const urlParams = new URLSearchParams(window.location.search);
 const testTime = urlParams.get('time');
@@ -39,7 +40,6 @@ function getQuote(quotes, time) {
         quote.missingQuoteMessage = /*html*/`<span class="star">*</span> si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!`;
     }
 
-    addQuoteLink.textContent = `Agregar cita (${time})`;
     addQuoteLink.href = url.href;
 
     return quote;
@@ -79,9 +79,20 @@ async function updateTime(testTime) {
     }
 }
 
+function updateQuoteTime() {
+    const now = new Date();
+    const s = now.getSeconds();
+    const ms = now.getMilliseconds() / 1000;
+    const seconds = s + ms;
+
+    quoteTimeBar.style.width = `${(seconds*100) / 60}%`;
+    quoteTimeBar.style.transition = s === 0 ? 'none' : 'width 1s linear';
+}
+
 updateTime(testTime);
 getStatistics();
 
 if (!testTime) {
     setInterval(updateTime, 1000);
+    setInterval(updateQuoteTime, 1000);
 }
