@@ -87,12 +87,17 @@ async function updateTime(testTime) {
             document.title = `[${time}] Reloj Literario`;
         }
 
+        if (testQuote) {
+            quote.title = "Libro";
+            quote.author = "Autor";
+        }
+
         html = /*html*/`
         <blockquote aria-label="${quote.time}">
             <p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>
             <cite>— ${quote.title}, ${quote.author}</cite>`;
 
-        if (quote.missingQuoteMessage) {
+        if (!testQuote && quote.missingQuoteMessage) {
             html += /*html*/`<div id="footnote">${quote.missingQuoteMessage}</div>`;
         }
 
