@@ -22,7 +22,7 @@ def csv_to_json(input_csv, output_folder):
     for key, group in df.groupby('Time'):
         # Convertir el DataFrame del grupo a una lista de diccionarios
         data = []
-        for index, row in group.iterrows():            
+        for row in group.iterrows():            
             # Dividir la cita basada en Quote time
             quote_parts = row['Quote'].split(row['Quote time'], 1)
             quote_first = quote_parts[0]
@@ -34,6 +34,7 @@ def csv_to_json(input_csv, output_folder):
                 'quote_first': quote_first,
                 'quote_last': quote_last,
                 'quote_time_case': row['Quote time'],
+                'quote_raw': row['Quote'],
                 'title': row['Title'],
                 'author': row['Author'],
                 'sfw': row['SFW']
