@@ -1,6 +1,8 @@
 # Reloj literario
 
-Un reloj que te dice la hora usando citas de libros, para verlo hagan click acá https://reloj-literario.netlify.app/
+Un reloj que te dice la hora usando citas de libros, basado en el trabajo de Johannes Enevoldsen, que a su vez se basó en el trabajo de Jaap Meijers (plagio di plagio), pero está vez es en español :D
+
+https://reloj-literario.netlify.app/
 
 ![reloj-literario](https://github.com/cdmoro/reloj-literario/assets/28156761/624625bc-9606-48cb-a709-139b4401a89f)
 
