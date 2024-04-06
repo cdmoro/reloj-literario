@@ -1,9 +1,10 @@
 [
     {
         "time": "04:00",
-        "quote_first": "Yo tendr\u00e9 cuidado de socorreros si os vi\u00e9redes en trabajo, y en todo har\u00e9is como se espera de vuestro entendimiento. Deste lugar, a 16 de agosto, a las ",
-        "quote_last": ".\r\n\r\nVuestro amigo,\r\nEl Duque.",
-        "quote_time_case": "cuatro de la ma\u00f1ana",
+        "quote_first": "Yo tendré cuidado de socorreros si os viéredes en trabajo, y en todo haréis como se espera de vuestro entendimiento. Deste lugar, a 16 de agosto, a las ",
+        "quote_last": ".\n\nVuestro amigo,\nEl Duque.",
+        "quote_time_case": "cuatro de la mañana",
+        "quote_raw": "Yo tendré cuidado de socorreros si os viéredes en trabajo, y en todo haréis como se espera de vuestro entendimiento. Deste lugar, a 16 de agosto, a las cuatro de la mañana.\n\nVuestro amigo,\nEl Duque.",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
         "sfw": true
@@ -11,10 +12,11 @@
     {
         "time": "04:00",
         "quote_first": "Belano dijo son las ",
-        "quote_last": ". En ese momento supe con resignaci\u00f3n que no iba a poder dormir.",
-        "quote_time_case": "cuatro de la ma\u00f1ana",
+        "quote_last": ". En ese momento supe con resignación que no iba a poder dormir.",
+        "quote_time_case": "cuatro de la mañana",
+        "quote_raw": "Belano dijo son las cuatro de la mañana. En ese momento supe con resignación que no iba a poder dormir.",
         "title": "Los detectives salvajes",
-        "author": "Roberto Bola\u00f1o",
+        "author": "Roberto Bolaño",
         "sfw": true
     }
 ]

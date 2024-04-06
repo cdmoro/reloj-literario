@@ -1,11 +1,12 @@
 [
     {
         "time": "07:59",
-        "quote_first": "Una ma\u00f1ana, yo acababa de llegar a la casa y ",
-        "quote_last": ", me encontr\u00e9 a don Octavio levantado, esper\u00e1ndome en la cocina.",
-        "quote_time_case": "a\u00fan no eran las ocho",
+        "quote_first": "Una mañana, yo acababa de llegar a la casa y ",
+        "quote_last": ", me encontré a don Octavio levantado, esperándome en la cocina.",
+        "quote_time_case": "aún no eran las ocho",
+        "quote_raw": "Una mañana, yo acababa de llegar a la casa y aún no eran las ocho, me encontré a don Octavio levantado, esperándome en la cocina.",
         "title": "Los detectives salvajes",
-        "author": "Roberto Bola\u00f1o",
+        "author": "Roberto Bolaño",
         "sfw": true
     }
 ]

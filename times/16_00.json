@@ -1,9 +1,10 @@
 [
     {
         "time": "16:00",
-        "quote_first": "El d\u00eda martes, a las ",
-        "quote_last": ", Erdosain recibi\u00f3 la visita del Astr\u00f3logo, quien le avis\u00f3 que el mi\u00e9rcoles de esa semana, a las nueve de la ma\u00f1ana se reunir\u00edan los jefes en T\u00e9mperley.",
+        "quote_first": "El día martes, a las ",
+        "quote_last": ", Erdosain recibió la visita del Astrólogo, quien le avisó que el miércoles de esa semana, a las nueve de la mañana se reunirían los jefes en Témperley.",
         "quote_time_case": "cuatro de la tarde",
+        "quote_raw": "El día martes, a las cuatro de la tarde, Erdosain recibió la visita del Astrólogo, quien le avisó que el miércoles de esa semana, a las nueve de la mañana se reunirían los jefes en Témperley.",
         "title": "Los siete locos",
         "author": "Roberto Arlt",
         "sfw": true

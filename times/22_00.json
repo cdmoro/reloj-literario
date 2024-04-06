@@ -2,8 +2,9 @@
     {
         "time": "22:00",
         "quote_first": "A las ",
-        "quote_last": " no hab\u00eda vuelto a\u00fan, y entonces me acost\u00e9; a eso de la una de la madrugada me despertaron sus pasos en el cuarto",
+        "quote_last": " no había vuelto aún, y entonces me acosté; a eso de la una de la madrugada me despertaron sus pasos en el cuarto",
         "quote_time_case": "diez de la noche",
+        "quote_raw": "A las diez de la noche no había vuelto aún, y entonces me acosté; a eso de la una de la madrugada me despertaron sus pasos en el cuarto",
         "title": "Los siete locos",
         "author": "Roberto Arlt",
         "sfw": true

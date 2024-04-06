@@ -45,16 +45,17 @@ function getQuote(quotes, time) {
     url.searchParams.set('template', 'agregar-cita.yaml');
     url.searchParams.set('title', `[${time}] Agregar cita`);
 
-    const quote = Object.assign({}, quotes[Math.floor(Math.random() * quotes.length)]);
+    const random_quote_index = Math.floor(Math.random() * quotes.length);
+    const quote = Object.assign({}, quotes[random_quote_index]);
 
     if (!quote.quote_time_case) {
         quote.time = time;
         quote.quote_time_case = time;
-        quote.missingQuoteMessage = /*html*/`<span class="star">*</span> si sabés de alguna cita hacé click <a href='${url.href}' target='_blank'>acá</a> o escribime!`;
+    }
 
-        if (!isZenMode) {
-            quote.quote_last += '*';
-        }
+    if (testQuote) {
+        quote.title = "Libro";
+        quote.author = "Autor";
     }
 
     addQuoteLink.href = url.href;
@@ -83,27 +84,17 @@ async function updateTime(testTime) {
         quotes = await getQuotes(fileName);
         quote = getQuote(quotes, time);
 
-        if (!testTime && !testQuote) {
+        if (!testQuote) {
             document.title = `[${time}] Reloj Literario`;
         }
 
-        if (testQuote) {
-            quote.title = "Libro";
-            quote.author = "Autor";
-        }
-
         html = /*html*/`
-        <blockquote aria-label="${quote.time}">
-            <p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>
-            <cite>— ${quote.title}, ${quote.author}</cite>`;
+            <blockquote aria-label="${quote.time}" aria-description="${quote.quote_raw}">
+                <p>${testQuote || `${quote.quote_first}<span class="quote-time">${quote.quote_time_case}</span>${quote.quote_last}`}</p>
+                <cite>— ${quote.title}, ${quote.author}</cite>
+            </blockquote>`;
 
-        if (!testQuote && quote.missingQuoteMessage) {
-            html += /*html*/`<div id="footnote">${quote.missingQuoteMessage}</div>`;
-        }
-
-        html += /*html*/`</blockquote>`;
-
-        clock.innerHTML = html.replace(/\r\n/g, "<br>");
+        clock.innerHTML = html.replace(/\n/g, "<br>");
         lastTime = time;
     }
 }

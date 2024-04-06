@@ -1,18 +1,20 @@
 [
     {
         "time": "09:00",
-        "quote_first": "Hasta aquel jueves indeseable, en que el m\u00e9dico menos notorio de los muchos que lo hab\u00edan visto lo cit\u00f3 a las ",
-        "quote_last": " en el pabell\u00f3n de neurolog\u00eda.",
-        "quote_time_case": "nueve de la ma\u00f1ana",
+        "quote_first": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las ",
+        "quote_last": " en el pabellón de neurología.",
+        "quote_time_case": "nueve de la mañana",
+        "quote_raw": "Hasta aquel jueves indeseable, en que el médico menos notorio de los muchos que lo habían visto lo citó a las nueve de la mañana en el pabellón de neurología.",
         "title": "Doce cuentos peregrinos",
-        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "author": "Gabriel García Márquez",
         "sfw": true
     },
     {
         "time": "09:00",
-        "quote_first": "\u2014\u00bfY se aburre mucho usted?\r\n\u2014Regular. He organizado mi vida como la de un industrial. Todos los d\u00edas me acuesto a las doce y me levanto a las ",
+        "quote_first": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las ",
         "quote_last": ".",
-        "quote_time_case": "nueve de la ma\u00f1ana",
+        "quote_time_case": "nueve de la mañana",
+        "quote_raw": "—¿Y se aburre mucho usted?\n—Regular. He organizado mi vida como la de un industrial. Todos los días me acuesto a las doce y me levanto a las nueve de la mañana.",
         "title": "Los siete locos",
         "author": "Roberto Arlt",
         "sfw": true

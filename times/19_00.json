@@ -1,38 +1,42 @@
 [
     {
         "time": "19:00",
-        "quote_first": "\u2014El jueves es mi d\u00eda libre \u2014dijo Homero.\r\n\u2014Perfecto \u2014dijo el presidente\u2014. El jueves a las ",
-        "quote_last": " estoy en su casa. Ser\u00e1 un placer.",
+        "quote_first": "—El jueves es mi día libre —dijo Homero.\n—Perfecto —dijo el presidente—. El jueves a las ",
+        "quote_last": " estoy en su casa. Será un placer.",
         "quote_time_case": "siete de la noche",
+        "quote_raw": "—El jueves es mi día libre —dijo Homero.\n—Perfecto —dijo el presidente—. El jueves a las siete de la noche estoy en su casa. Será un placer.",
         "title": "Doce cuentos peregrinos",
-        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "author": "Gabriel García Márquez",
         "sfw": true
     },
     {
         "time": "19:00",
         "quote_first": "A las ",
-        "quote_last": ", todav\u00eda vestida de reina, lo recibi\u00f3 en la cama.",
+        "quote_last": ", todavía vestida de reina, lo recibió en la cama.",
         "quote_time_case": "siete de la noche",
-        "title": "100 a\u00f1os de soledad",
-        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "quote_raw": "A las siete de la noche, todavía vestida de reina, lo recibió en la cama.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
         "sfw": false
     },
     {
         "time": "19:00",
-        "quote_first": "Aureliano Triste sal\u00eda de la casa de su madre, a las ",
-        "quote_last": ", cuando un disparo de fusil surgido de la oscuridad le perfor\u00f3 la frente.",
+        "quote_first": "Aureliano Triste salía de la casa de su madre, a las ",
+        "quote_last": ", cuando un disparo de fusil surgido de la oscuridad le perforó la frente.",
         "quote_time_case": "siete de la noche",
-        "title": "100 a\u00f1os de soledad",
-        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "quote_raw": "Aureliano Triste salía de la casa de su madre, a las siete de la noche, cuando un disparo de fusil surgido de la oscuridad le perforó la frente.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
         "sfw": false
     },
     {
         "time": "19:00",
-        "quote_first": "Lo \u00fanico que intrig\u00f3 a \u00darsula despu\u00e9s de casi dos meses de castigo, fue que Meme no se ba\u00f1ara en la ma\u00f1ana, como lo hac\u00edan todos, sino a las ",
+        "quote_first": "Lo único que intrigó a Úrsula después de casi dos meses de castigo, fue que Meme no se bañara en la mañana, como lo hacían todos, sino a las ",
         "quote_last": ".",
         "quote_time_case": "siete de la noche",
-        "title": "100 a\u00f1os de soledad",
-        "author": "Gabriel Garc\u00eda M\u00e1rquez",
+        "quote_raw": "Lo único que intrigó a Úrsula después de casi dos meses de castigo, fue que Meme no se bañara en la mañana, como lo hacían todos, sino a las siete de la noche.",
+        "title": "100 años de soledad",
+        "author": "Gabriel García Márquez",
         "sfw": true
     }
 ]

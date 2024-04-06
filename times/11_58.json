@@ -1,9 +1,10 @@
 [
     {
         "time": "11:58",
-        "quote_first": "\u00bb",
-        "quote_last": " podr\u00eda ser cuando nos echaron en la barca, d\u00e1ndonos dos barriles de agua y alg\u00fan bizcocho",
-        "quote_time_case": "Cerca de mediod\u00eda",
+        "quote_first": "»",
+        "quote_last": " podría ser cuando nos echaron en la barca, dándonos dos barriles de agua y algún bizcocho",
+        "quote_time_case": "Cerca de mediodía",
+        "quote_raw": "»Cerca de mediodía podría ser cuando nos echaron en la barca, dándonos dos barriles de agua y algún bizcocho",
         "title": "Don Quijote de la Mancha",
         "author": "Miguel de Cervantes",
         "sfw": true
